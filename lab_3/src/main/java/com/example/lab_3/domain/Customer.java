@@ -1,4 +1,4 @@
-package ru.qnocks.trsis.lab2.domain;
+package com.example.lab_3.domain;
 
 import lombok.AllArgsConstructor;
 import lombok.Getter;
@@ -9,9 +9,8 @@ import lombok.Setter;
 @Setter
 @NoArgsConstructor
 @AllArgsConstructor
-public class Car {
+public class Customer {
     private Long id;
-    private String brand;
-    private Integer year;
-    private Integer price;
+    private String name;
+    private String birthDate;
 }

@@ -1,4 +1,4 @@
-package ru.qnocks.trsis.lab2.exceptions;
+package com.example.lab_3.exceptions;
 
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
