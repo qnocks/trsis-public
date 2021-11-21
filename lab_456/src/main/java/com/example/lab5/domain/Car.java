@@ -1,46 +1,30 @@
 package com.example.lab5.domain;
 
+import lombok.*;
+
+import javax.persistence.*;
+
+@Entity
+@Table(name = "car")
+@Getter
+@Setter
+@AllArgsConstructor
+@NoArgsConstructor
+@RequiredArgsConstructor
 public class Car {
+    @Id
+    @GeneratedValue(strategy = GenerationType.AUTO)
     private Long id;
+
+    @NonNull
     private String brand;
+
+    @NonNull
     private Integer year;
+
+    @NonNull
     private Integer price;
 
-    public Car(Integer year, String brand, Integer price) {
-        this.year = year;
-        this.brand = brand;
-        this.price = price;
-    }
-
-    public Long getId() {
-        return id;
-    }
-
-    public void setId(Long id) {
-        this.id = id;
-    }
-
-    public int getYear() {
-        return year;
-    }
-
-    public void setYear(int year) {
-        this.year = year;
-    }
-
-    public String getBrand() {
-        return brand;
-    }
-
-    public void setBrand(String brand) {
-        this.brand = brand;
-    }
-
-    public Integer getPrice() {
-        return price;
-    }
-
-    public void setPrice(Integer price) {
-        this.price = price;
-    }
+    @OneToOne(mappedBy = "car")
+    private Purchase purchase;
 }

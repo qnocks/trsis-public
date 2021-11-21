@@ -31,8 +31,8 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter {
         http
                 .authorizeRequests()
                 .antMatchers("/").hasAnyRole("ADMIN", "USER")
-                .antMatchers("/patients").hasRole("ADMIN")
-                .antMatchers("/appointments").hasRole("ADMIN")
+                .antMatchers("/customers").hasRole("ADMIN")
+                .antMatchers("/purchases").hasRole("ADMIN")
                 .antMatchers("/login").permitAll()
                 .anyRequest().authenticated()
                 .and()
@@ -56,24 +56,6 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter {
         return daoAuthenticationProvider;
     }
 
-//    @Bean
-//    public UserDetailsService userDetailsServiceBean() {
-//        UserDetails user = User.builder()
-//                .username("user")
-//                .password(passwordEncoder().encode("user"))
-//                .roles("USER")
-//                .authorities("READ")
-//                .build();
-//
-//        UserDetails admin = User.builder()
-//                .username("admin")
-//                .password(passwordEncoder().encode("admin"))
-//                .roles("ADMIN")
-//                .authorities("READ,WRITE")
-//                .build();
-//
-//        return new InMemoryUserDetailsManager(user, admin);
-//    }
 
     @Bean
     public PasswordEncoder passwordEncoder() {
