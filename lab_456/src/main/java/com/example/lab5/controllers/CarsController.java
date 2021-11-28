@@ -53,8 +53,8 @@ public class CarsController {
 
     @GetMapping("/{id}/delete")
     public String delete(@PathVariable Long id) {
-        carsService.delete(id);
         purchasesService.deleteByCarId(id);
+        carsService.delete(id);
         return "redirect:/cars";
     }
 }

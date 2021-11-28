@@ -1,6 +1,8 @@
 package com.example.lab5.domain;
 
 import lombok.*;
+import org.hibernate.annotations.OnDelete;
+import org.hibernate.annotations.OnDeleteAction;
 
 import javax.persistence.*;
 
@@ -22,6 +24,6 @@ public class Customer {
     @NonNull
     private String birthDate;
 
-    @OneToOne(mappedBy = "customer")
+    @OneToOne
     private Purchase purchase;
 }

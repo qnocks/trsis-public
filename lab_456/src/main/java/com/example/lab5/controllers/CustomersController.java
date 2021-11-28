@@ -53,8 +53,8 @@ public class CustomersController {
 
     @GetMapping("/{id}/delete")
     public String delete(@PathVariable Long id) {
-        customersService.delete(id);
         purchasesService.deleteByCustomerId(id);
+        customersService.delete(id);
         return "redirect:/customers";
     }
 }
