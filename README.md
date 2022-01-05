@@ -1,5 +1,7 @@
 # Технология разработки серверных информационных систем
 
+[![Build Status](https://travis-ci.org/spring/spring.svg?branch=develop)](https://travis-ci.org/spring/spring)
+
 ## Технические требования
 
 Рекомендуется разрабатывать программное обеспечение на платформе [Java SE 8](http://www.oracle.com/technetwork/java/javase/downloads/index.html) и Spring 5.
